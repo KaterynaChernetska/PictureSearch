@@ -31,27 +31,3 @@ export class PixabayAPI {
           }
         }
   }
-
-
-  // async function getPhotos(name) {
-
-//   const searchParams = new URLSearchParams({
-//     image_type: 'photo',
-//     safesearch: 'true',
-//     page : 1,
-//     per_page: 40,
-//     key: API_KEY,
-//   });
-//     try {
-//       const response = await axios.get(`${BASE_URL}/?${name}${searchParams}`);
-//       // const data = await response.json();
-//      return response;
-//      console.error(response);
-//       // const photos = await response.json();
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   }
-
-//   console.log(getPhotos('cat'));
-// https://pixabay.com/api/key=32848509-cba45cf412629684caa169d48
