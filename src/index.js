@@ -46,18 +46,12 @@ async function onSubmitgetData() {
     if (pixabayAPI.page === 1 && data.totalHits !== 0) {
       Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
     }
-    if (data.totalHits > pixabayAPI.elementsPerPage) {
+  
       loadMoreBtn.style.display = 'flex';
-    }
-    if (data.totalHits < pixabayAPI.elementsPerPage) {
-      Notiflix.Notify.failure(
-        "We're sorry, but you've reached the end of search results."
-      );
-      loadMoreBtn.style.display = 'none';
-    }
-    container.innerHTML = createMarkup(data.hits);
-   
-    simpleLightBox.refresh();
+      container.innerHTML = createMarkup(data.hits);     
+      simpleLightBox.refresh();
+  
+
 
   } catch (error) {
     console.error(error);
