@@ -66,15 +66,19 @@ async function onSubmitgetData() {
 
 async function onLoadMoreGetData() {
   try {
+   
     const data = await pixabayAPI.getPhotos();
+    console.log(data);
+
+
+  if (data.hits.length < pixabayAPI.elementsPerPage) {
+
     loadMoreBtn.style.display = 'none';
     Notiflix.Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
-   
-  if (data.hits.length !== 0) {
-    container.insertAdjacentHTML('beforeend', createMarkup(data.hits));
   }
+  container.insertAdjacentHTML('beforeend', createMarkup(data.hits));
     simpleLightBox.refresh();
 
   } catch (error) {
