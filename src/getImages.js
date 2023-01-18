@@ -12,7 +12,7 @@ export class PixabayAPI {
   
     async getPhotos() {
           try {
-            const response = await axios.get(`${PixabayAPI.BASE_URL}`,
+            return await axios.get(`${PixabayAPI.BASE_URL}`,
             {
                 params: {
                     image_type: 'photo',
@@ -24,7 +24,7 @@ export class PixabayAPI {
                     key: PixabayAPI.API_KEY,
                 }
             });
-            return response.data;
+           
             // console.log(data)
           } catch (error) {
             console.error(error);
